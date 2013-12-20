@@ -6,7 +6,7 @@ function has_parents_term()
   $term = get_queried_object();
   $tax = '[所属するタクソノミー名]';
   $parents = $term->parent;
-  if($parents == 0){
+  if($parents == 0 && !is_post_type_archive()){
     $title = $title . '[任意の文字]';
   } elseif(is_post_type_archive()) {
     $title = wp_title('', false, '') ;
